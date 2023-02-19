@@ -84,19 +84,19 @@ public class KalahaServiceImpl implements KalahaService {
         int currentPlayer = game.getCurrentPlayer();
 
         if (pitIndex < 0 || pitIndex >= pits.length) {
-            gameRepository.updateGameById(Translator.getBoardEntity(game.getBoard()).getId(),currentPlayer,gameId);
+            gameRepository.updateGameById(currentPlayer,gameId);
             return new MancalaMove(MancalaMove.MoveStatus.INVALID, null, game);
         }
         int currentPitIndex = sowStones(pitIndex, pits, opponentStore);
 
         if (currentPitIndex - 1 == opponentStore) {
-            gameRepository.updateGameById(Translator.getBoardEntity(game.getBoard()).getId(),currentPlayer,gameId);
+            gameRepository.updateGameById(currentPlayer,gameId);
             return new MancalaMove(MancalaMove.MoveStatus.INVALID, null, game);
         }
         captureStones(pits, opponentStore, currentPlayerStore, currentPitIndex-1);
         int nextPlayer = nextPlayer(currentPlayer,currentPitIndex-1,currentPlayerStore);
         boolean gameOver = isGameOver(game);
-        gameRepository.updateGameById(Translator.getBoardEntity(game.getBoard()).getId(),nextPlayer,gameId);
+        gameRepository.updateGameById(nextPlayer,gameId);
         return new MancalaMove(gameOver ? getResults(game) : MancalaMove.MoveStatus.VALID, nextPlayer, game);
     }
 
