@@ -13,6 +13,6 @@ public interface GameRepository extends JpaRepository<GameEntity,Long> {
     Optional<GameEntity> findById(Long id);
 
     @Modifying
-    @Query(value = "update GAME_ENTITY u set u.BOARD_ID = ?1, u.CURRENT_PLAYER = ?2 where u.id = ?3", nativeQuery = true)
-    void updateGameById(Long board, int currentPlayer, Long id);
+    @Query(value = "update GAME_ENTITY u set u.CURRENT_PLAYER = ?1 where u.id = ?2", nativeQuery = true)
+    void updateGameById(int currentPlayer, Long id);
 }
