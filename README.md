@@ -64,5 +64,3 @@ This project is not licensed.
 - Spring Boot and H2 Database for robust backend support.
 
 ---
-
-Feel free to adjust any details according to your actual project setup or preferences!
