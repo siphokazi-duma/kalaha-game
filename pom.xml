@@ -8,9 +8,9 @@
 		<version>2.7.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>za.co.fnb.game</groupId>
+	<groupId>za.co.duma.game</groupId>
 	<artifactId>mancala</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>mancala</name>
 	<description>Mancala assessment</description>
 	<properties>
